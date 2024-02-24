@@ -1,0 +1,20 @@
+{
+	"private": true,
+	"name": "ntnu-computer-graphics-2024",
+	"type": "module",
+	"scripts": {
+		"format": "prettier --ignore-path .gitignore --write .",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.2.5",
+		"prettier-plugin-organize-imports": "^3.2.4",
+		"typescript": "^5.3.3"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": "prettier --ignore-path .gitignore --write"
+	},
+	"packageManager": "pnpm@8.15.3"
+}
