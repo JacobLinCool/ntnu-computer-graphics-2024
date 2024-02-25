@@ -1,4 +1,5 @@
 import FSHADER_SOURCE from "./fshader.glsl?raw";
+import { Program } from "./program";
 import { Screen } from "./screen";
 import VSHADER_SOURCE from "./vshader.glsl?raw";
 
@@ -11,9 +12,10 @@ async function main() {
 	}
 
 	const screen1 = new Screen(canvas1);
-	const vertexShader = screen1.compile(WebGL2RenderingContext.FRAGMENT_SHADER, FSHADER_SOURCE);
-	const fragmentShader = screen1.compile(WebGL2RenderingContext.VERTEX_SHADER, VSHADER_SOURCE);
-	const program = screen1.link(vertexShader, fragmentShader);
+	const program = new Program(screen1.gl)
+		.compile(WebGL2RenderingContext.FRAGMENT_SHADER, FSHADER_SOURCE)
+		.compile(WebGL2RenderingContext.VERTEX_SHADER, VSHADER_SOURCE)
+		.link();
 	screen1.use(program);
 
 	screen1.clear(0.0, 1.0, 0.0, 1.0);
@@ -29,9 +31,10 @@ async function main() {
 	}
 
 	const screen2 = new Screen(canvas2);
-	const vertexShader2 = screen2.compile(WebGL2RenderingContext.FRAGMENT_SHADER, FSHADER_SOURCE);
-	const fragmentShader2 = screen2.compile(WebGL2RenderingContext.VERTEX_SHADER, VSHADER_SOURCE);
-	const program2 = screen2.link(vertexShader2, fragmentShader2);
+	const program2 = new Program(screen2.gl)
+		.compile(WebGL2RenderingContext.FRAGMENT_SHADER, FSHADER_SOURCE)
+		.compile(WebGL2RenderingContext.VERTEX_SHADER, VSHADER_SOURCE)
+		.link();
 	screen2.use(program2);
 
 	let angle = 0,
