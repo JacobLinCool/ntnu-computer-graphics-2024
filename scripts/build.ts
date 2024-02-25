@@ -14,5 +14,5 @@ await new Promise<void>((resolve) => server.listen(port, resolve));
 
 const res = await fetch(`http://localhost:${port}`);
 const html = await res.text();
-fs.writeFileSync("dist/index.html", html);
+fs.writeFileSync("dist/index.html", html.replace(/href="&#47;/g, 'href=".&#47;'));
 server.close();
