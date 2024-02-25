@@ -7,5 +7,6 @@ export default defineConfig({
 		modulePreload: {
 			polyfill: false,
 		},
+		outDir: "../../dist/lab00",
 	},
 });
