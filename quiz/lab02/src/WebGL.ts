@@ -87,8 +87,8 @@ function interactive() {
 	requestAnimationFrame(function render() {
 		screen.clear(0.0, 0.0, 0.0, 1.0);
 		screen.triangleStrip(program, points);
-		for (const [x, y, color] of points) {
-			screen.point(program, x, y, [...color, 1.0]);
+		for (const [x, y, color] of points.slice(-2)) {
+			screen.point(program, x, y, [...color, 1]);
 		}
 
 		screen.point(program, pointer[0], pointer[1], [...color, 1.0]);
