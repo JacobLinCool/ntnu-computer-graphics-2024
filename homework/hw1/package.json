@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "lab00",
+	"name": "hw1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -9,5 +9,8 @@
 	},
 	"devDependencies": {
 		"vite": "^5.1.6"
+	},
+	"dependencies": {
+		"library": "workspace:^"
 	}
 }
