@@ -3,8 +3,8 @@
 	"name": "library",
 	"type": "module",
 	"exports": {
-		"import": "./dist/index.js",
-		"types": "./dist/index.d.ts"
+		".": "./dist/index.js",
+		"./cuon-matrix": "./dist/cuon-matrix.js"
 	},
 	"scripts": {
 		"build": "tsup"
