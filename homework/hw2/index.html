@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Homework 2 - Computer Graphics</title>
+	<!-- <script src="https://greggman.github.io/webgl-lint/webgl-lint.js" crossorigin></script> -->
+</head>
+
+<body style="font-family: Arial, sans-serif; height: 100vh; overflow: hidden;">
+	<div style="display: flex; height: 100%; overflow: hidden; margin: 1rem; ">
+		<canvas id="webgl" width="600" height="600" style="width: 600px; height: 600px;">
+			Please use a browser that support "canvas"
+		</canvas>
+		<div style="overflow: auto;">
+			<div style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+				<h1> Music Player Guide </h1>
+				<ul>
+					<li>
+						Press <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move the crane.
+					</li>
+					<li>
+						Hold <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> with <kbd>R</kbd> (clockwise) <kbd>F</kbd>
+						(counter-clockwise) to rotate the crane arms.
+					</li>
+					<li>
+						Hold <kbd>Space</kbd> to enable the magnet and pick up the vinyl when the magnet is close to its
+						center.
+					</li>
+					<li>
+						Press <kbd>Arrow Up</kbd> <kbd>Arrow Down</kbd> to rotate the triangles on the vinyl.
+					</li>
+					<li>
+						Move the mouse in the canvas to move the camera. Scroll to zoom in/out.
+					</li>
+					<li>
+						The music will start playing when the vinyl is closed to the turntable.
+					</li>
+				</ul>
+				<p>
+				<h2>In a world where code and canvas collide <i style="font-size: 0.7em;">Electro-pop</i></h2>
+				<img src="./cover.png" alt="cover"
+					style="width: 100%; max-width: 300px; margin: 1rem 0; border-radius: 0.5rem;">
+				<p style="white-space: pre-line;">
+					[Verse 1]
+					In a world where code and canvas collide,
+					Press W, A, S, D, let the crane glide.
+					Through the screen, where the 3D dreams hide,
+					Move with precision, let your fingers decide.
+
+					[Chorus]
+					Hold down the 1, 2, 3, with R and F, feel the beat,
+					Rotating arms, in a dance, so neat.
+					Space to grab, magnet's embrace, a feat,
+					Close to the center, where vinyl and destiny meet.
+
+					[Verse 2]
+					With every move, a new perspective you'll find,
+					Mouse in motion, world's design intertwined.
+					Scroll to zoom, in this digital grind,
+					Each action, a note, in this melody defined.
+
+					[Bridge]
+					When the vinyl's close, music begins to play,
+					A symphony of pixels, in harmonic array.
+					Move, rotate, zoom, in this virtual ballet,
+					In WebGL's realm, where we all sway.
+
+					[Chorus]
+					Hold down the 1, 2, 3, with R and F, feel the beat,
+					Rotating arms, in a dance, so neat.
+					Space to grab, magnet's embrace, a feat,
+					Close to the center, where vinyl and destiny meet.
+
+					[Outro]
+					In this canvas world, where control is key,
+					We move, we play, in digital glee.
+					Through WebGL's lens, a new world we see,
+					With every command, we set the music free.
+				</p>
+				</p>
+			</div>
+		</div>
+		<audio id="audio" loop preload="auto">
+			<source src="./In a world where code and canvas collide.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	</div>
+	<script src="src/WebGL.ts" type="module"></script>
+	<style>
+		kbd {
+			background-color: #f7f7f7;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+			color: #333;
+			display: inline-block;
+			font-size: 0.85em;
+			font-weight: 700;
+			line-height: 1;
+			padding: 0.2em 0.6em;
+			text-shadow: 0 1px 0 #fff;
+		}
+	</style>
+</body>
+
+</html>

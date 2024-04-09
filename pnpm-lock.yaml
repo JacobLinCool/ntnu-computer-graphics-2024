@@ -43,6 +43,16 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
+  homework/hw2:
+    dependencies:
+      library:
+        specifier: workspace:^
+        version: link:../../library
+    devDependencies:
+      vite:
+        specifier: ^5.1.6
+        version: 5.1.6
+
   library:
     devDependencies:
       tsup:
