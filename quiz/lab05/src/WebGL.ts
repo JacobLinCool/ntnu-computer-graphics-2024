@@ -149,10 +149,10 @@ class Lab05 {
 
 		this.modelMatrix1.setRotate(-this.angleY, 1, 0, 0);
 		this.modelMatrix1.rotate(this.angleX, 0, 1, 0);
-		this.modelMatrix1.translate(0.6, 0, 0);
-		this.modelMatrix2.setRotate(-this.angleY, 1, 0, 0);
-		this.modelMatrix2.rotate(this.angleX, 0, 1, 0);
-		this.modelMatrix2.translate(-0.6, 0, 0);
+		// this.modelMatrix1.translate(0.6, 0, 0);
+		// this.modelMatrix2.setRotate(-this.angleY, 1, 0, 0);
+		// this.modelMatrix2.rotate(this.angleX, 0, 1, 0);
+		// this.modelMatrix2.translate(-0.6, 0, 0);
 
 		this.drawOneViewport(
 			0,
@@ -250,7 +250,7 @@ class Lab05 {
 
 		this.transformMat.set(projectionMatrix);
 		this.transformMat.multiply(viewMatrix);
-		// this.modelMatrix1.translate(0.6, 0, 0);
+		this.modelMatrix1.translate(0.6, 0, 0);
 		this.transformMat.multiply(this.modelMatrix1);
 		this.renderer.gl.uniformMatrix4fv(this.u_mvpMatrix, false, this.transformMat.elements);
 		this.initAttributeVariable(this.a_Position, {
@@ -267,8 +267,8 @@ class Lab05 {
 
 		this.transformMat.set(projectionMatrix);
 		this.transformMat.multiply(viewMatrix);
-		// this.modelMatrix1.translate(-1.2, 0, 0);
-		this.transformMat.multiply(this.modelMatrix2);
+		this.modelMatrix1.translate(-1.2, 0, 0);
+		this.transformMat.multiply(this.modelMatrix1);
 		this.renderer.gl.uniformMatrix4fv(this.u_mvpMatrix, false, this.transformMat.elements);
 		this.initAttributeVariable(this.a_Position, {
 			buffer: this.triangles.verticesBuffer,
@@ -281,6 +281,8 @@ class Lab05 {
 			type: this.renderer.gl.FLOAT,
 		});
 		this.renderer.gl.drawArrays(this.renderer.gl.TRIANGLES, 0, this.triangles.n);
+
+		this.modelMatrix1.translate(0.6, 0, 0);
 	}
 
 	private initAttributeVariable(
